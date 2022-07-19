@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Plugin-Version: 0.0.1
+Plugin-Id: ausbotswoadbuyer-plugin
+Plugin-Provider: unethicalite
+Plugin-Description: Buys Woads very quickly
+Plugin-License: 3-Clause BSD License
+

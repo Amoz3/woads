@@ -1,0 +1,38 @@
+package net.unethicallite.scripts.tbl.framework;
+
+
+import net.unethicalite.api.plugins.Script;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Tree<T extends Script>
+{
+    private final Root<T> root;
+
+    public Tree()
+    {
+        root = new Root<>();
+    }
+
+    public Leaf<T> addBranches(Leaf<T>... leaves)
+    {
+        root.addLeafs(leaves);
+        return root;
+    }
+
+    public void clear()
+    {
+        root.children.clear();
+    }
+
+    public List<String> getActiveBranches()
+    {
+        return root.children.stream().map(tLeaf -> tLeaf.getClass().getSimpleName()).collect(Collectors.toList());
+    }
+
+    public int onLoop()
+    {
+        return root.onLoop();
+    }
+}
